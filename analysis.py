@@ -3,9 +3,12 @@ import pandas as pd
 import requests
 import os
 from dotenv import load_dotenv
+if os.getenv("ENV") != "production":
+    load_dotenv()
 
-load_dotenv()
 api_key = os.getenv("API_KEY")
+if api_key is None:
+    raise ValueError("API_KEY not set")
 
 def get_channel(name):
     url = 'https://www.googleapis.com/youtube/v3/search'
@@ -16,6 +19,7 @@ def get_channel(name):
     "key": api_key
     }
     response = requests.get(url,params=params).json()
+    print(response)
 
     if not response.get('items'):
         raise ValueError(f"No channel found for: {name}")
