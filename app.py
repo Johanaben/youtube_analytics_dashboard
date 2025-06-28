@@ -33,12 +33,7 @@ if channel_name:
     top_10_bar = top_10[['title','views']].set_index('title')
     st.bar_chart(top_10_bar)
 
-    st.subheader("View Count Over Time")
-    st.line_chart(video_details['views'])
-
-
-    st.subheader("Views and Likes Over Time")
-    st.line_chart(video_details[['views', 'likes']])
+    
 else:
     st.warning("Please enter channel name.")
 
