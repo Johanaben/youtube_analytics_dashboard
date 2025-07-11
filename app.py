@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from analysis import get_channel, get_channel_details, get_video_stats
+from analysis import get_channel,get_channel_details, get_video_stats
 
 st.set_page_config(page_title="YouTube Analytics",page_icon=':bar_chart:',layout="wide")
 st.title("YouTube Analytics Dashboard")
