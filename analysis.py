@@ -58,7 +58,7 @@ def get_channel(name):
         raise ValueError(f"YouTube API error: {ch_data['error']}")
     return channel_id, ch_data
 
-def get_channel_datails(ch_response):
+def get_channel_details(ch_response):
     try:
         if 'error' in ch_response:
             print(f"YouTube API error: {ch_response['error']}")
