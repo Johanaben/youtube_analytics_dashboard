@@ -10,7 +10,7 @@ st.markdown('<style>div.block-container{padding-top:2rem;}</style>',unsafe_allow
 channel_name = st.text_input("Name of channel")
 if channel_name:
     channel_id,channel_response = get_channel(channel_name)
-    channel_details = get_channel_details(channel_name)
+    channel_details = get_channel_details(channel_response)
     title = channel_details['title']
     if hasattr(title, 'iloc'):
         title = title.iloc[0]
